@@ -27,7 +27,8 @@ with socket(AF_INET, SOCK_STREAM) as server_socket:
 
                     header = BuildHeader(outputdata)
 
-                    connection_socket.sendall(header+outputdata)
+                    connection_socket.sendall(header)
+                    connection_socket.sendall(outputdata)
 
                     print('Send %s to %s\n' % (file_name, connection[1][0]))
 
